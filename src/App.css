@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  background-color: #FFF5E1; /* Fondo beige claro */
+  color: #3E3E3E; /* Texto gris oscuro */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  padding-bottom: 2rem;
 }
 
 .App-logo {
@@ -14,20 +19,29 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #B22222; /* Rojo teja */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #FFF5E1; /* Beige para texto en header */
+  padding: 2rem 1rem;
+  box-shadow: 0 4px 10px rgba(160, 82, 45, 0.4);
 }
 
 .App-link {
-  color: #61dafb;
+  color: #6B8E23; /* Verde pasto */
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.App-link:hover {
+  color: #4f6618;
 }
 
+/* Animación logo */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +49,140 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Sombra al pasar mouse */
+.hover-shadow:hover {
+  transform: translateY(-3px);
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* -------------------------
+   Nuevos estilos globales 
+----------------------------*/
+
+/* Tarjetas y formularios con borde y sombra cálida */
+.card, form.card {
+  background-color: #fffaf0;
+  border: 1px solid #A0522D;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(160, 82, 45, 0.15);
+}
+
+/* Encabezados */
+h1, h2, h3, h4, h5 {
+  color: #B22222;
+  font-weight: 700;
+}
+
+/* Botones principales */
+.btn-primary, .btn-success {
+  background-color: #B22222;
+  border-color: #B22222;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+.btn-primary:hover, .btn-success:hover {
+  background-color: #7a1616;
+  border-color: #7a1616;
+}
+
+/* Botones secundarios */
+.btn-secondary {
+  background-color: #6B8E23;
+  border-color: #6B8E23;
+  color: white;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+.btn-secondary:hover {
+  background-color: #4f6618;
+  border-color: #4f6618;
+  color: white;
+}
+
+/* Botones de alerta (danger) */
+.btn-danger {
+  background-color: #A0522D;
+  border-color: #A0522D;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+.btn-danger:hover {
+  background-color: #6e3619;
+  border-color: #6e3619;
+}
+
+/* Tablas */
+.table {
+  border-collapse: separate;
+  border-spacing: 0 0.5rem;
+  width: 100%;
+}
+.table thead tr {
+  background-color: #B22222;
+  color: #fff;
+  border-radius: 6px;
+}
+.table tbody tr {
+  background-color: #fffaf0;
+  box-shadow: 0 1px 3px rgba(160, 82, 45, 0.1);
+  transition: background-color 0.3s ease;
+  border-radius: 6px;
+}
+.table tbody tr:hover {
+  background-color: #87CEEB;
+  color: #3E3E3E;
+}
+
+/* Filas alternas */
+.table tbody tr:nth-child(even) {
+  background-color: #eaf6ff;
+}
+
+/* Alertas */
+.alert {
+  border: 2px solid;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.alert-success {
+  background-color: #dff0d8;
+  border-color: #6B8E23;
+  color: #3E3E3E;
+}
+.alert-danger {
+  background-color: #f8d7da;
+  border-color: #A0522D;
+  color: #3E3E3E;
+}
+.alert-info {
+  background-color: #d1ecf1;
+  border-color: #87CEEB;
+  color: #3E3E3E;
+}
+
+/* Inputs y selects */
+.form-control, .form-select {
+  border: 1.5px solid #A0522D;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+.form-control:focus, .form-select:focus {
+  border-color: #B22222;
+  box-shadow: 0 0 5px rgba(178, 34, 34, 0.5);
+  outline: none;
+}
+
+/* Imágenes con efecto zoom suave */
+img.img-fluid.rounded.shadow-sm, img.img-fluid.rounded.shadow-lg {
+  transition: transform 0.4s ease;
+  border: 3px solid #A0522D;
+  border-radius: 12px;
+}
+img.img-fluid.rounded.shadow-sm:hover, img.img-fluid.rounded.shadow-lg:hover {
+  transform: scale(1.05);
 }
