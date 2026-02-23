@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 import faviconImg from "./images/favicon.webp";
 import Login from "./pages/Login.jsx";
 import Dashboard from "./pages/Dashboard.jsx";

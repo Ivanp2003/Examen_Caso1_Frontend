@@ -1,5 +1,5 @@
 import axios from 'axios'; 
-const API_URL = 'http://localhost:8080/backend-api/api'; //URL DEL BACKEND
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080/backend-api/api'; //URL DEL BACKEND desde .env
 export const login = async (correo, clave) => {
     const params = new URLSearchParams();
     params.append('correo', correo);

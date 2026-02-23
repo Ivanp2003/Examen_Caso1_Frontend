@@ -1,70 +1,191 @@
-# Getting Started with Create React App
+# Sistema de Matrículas - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplicación web moderna para la gestión académica de matrículas, estudiantes y materias. Desarrollada con React y diseñada para ofrecer una experiencia de usuario intuitiva y eficiente.
 
-## Available Scripts
+## 🚀 Características Principales
 
-In the project directory, you can run:
+- **Gestión de Estudiantes**: Registro, edición y eliminación de estudiantes
+- **Administración de Materias**: Catálogo completo de asignaturas
+- **Sistema de Matrículas**: Asignación de materias a estudiantes
+- **Dashboard Interactivo**: Estadísticas en tiempo real
+- **Diseño Responsive**: Funciona en cualquier dispositivo
+- **Interfaz Moderna**: UX/UI optimizada para máxima usabilidad
 
-### `npm start`
+## 📋 Requisitos Previos
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Node.js (versión 14 o superior)
+- npm o yarn
+- Backend API corriendo en `http://localhost:8080`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Instalación
 
-### `npm test`
+1. Clona el repositorio:
+```bash
+git clone [URL-del-repositorio]
+cd frontend
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Instala las dependencias:
+```bash
+npm install
+```
 
-### `npm run build`
+3. Configura las variables de entorno:
+```bash
+# Renombra .env.example a .env y ajusta la URL del API
+REACT_APP_API_URL=http://localhost:8080/backend-api/api
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## ▶️ Ejecución
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Modo Desarrollo
+```bash
+npm start
+```
+La aplicación se abrirá en `http://localhost:3000`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Modo Producción
+```bash
+npm run build
+```
+Los archivos optimizados se generarán en la carpeta `build`
 
-### `npm run eject`
+## 🚀 Despliegue
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Opción 1: Vercel (Recomendado)
+1. Sube tu proyecto a GitHub
+2. Ve a [vercel.com](https://vercel.com) y conecta tu repositorio
+3. Configura las variables de entorno en el dashboard de Vercel
+4. Deploy automático
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Opción 2: Netlify
+1. Comprime la carpeta `build` en un archivo ZIP
+2. Ve a [netlify.com](https://netlify.com) y arrastra el archivo ZIP
+3. Configura las variables de entorno
+4. Deploy listo
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Opción 3: Hosting Compartido (cPanel/Plesk)
+1. Comprime la carpeta `build`
+2. Sube via FTP al directorio `public_html/` o `htdocs/`
+3. Crea archivo `.htaccess` para manejar rutas:
+```apache
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Opción 4: Servidor Local
+```bash
+# Para pruebas
+npm install -g serve
+serve -s build
 
-## Learn More
+# Para producción
+npm install -g http-server
+http-server build -p 80
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### ⚙️ Configuración Importante
+- Actualiza `REACT_APP_API_URL` en producción
+- Configura CORS en el backend
+- Habilita HTTPS si es posible
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🏗️ Estructura del Proyecto
 
-### Code Splitting
+```
+src/
+├── components/     # Componentes reutilizables
+├── pages/         # Páginas principales
+│   ├── Login.jsx
+│   ├── Dashboard.jsx
+│   ├── Estudiantes.jsx
+│   ├── Materias.jsx
+│   └── Matriculas.jsx
+├── services/      # Conexión con la API
+├── images/        # Recursos visuales
+├── App.css        # Estilos globales
+└── App.jsx        # Componente principal
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🎨 Tecnologías Utilizadas
 
-### Analyzing the Bundle Size
+- **React 19**: Librería principal de UI
+- **React Router**: Navegación entre páginas
+- **Bootstrap**: Framework CSS para componentes base
+- **Axios**: Cliente HTTP para comunicación con API
+- **CSS3**: Estilos personalizados y animaciones
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📱 Funcionalidades
 
-### Making a Progressive Web App
+### 🔐 Login
+- Autenticación segura con credenciales
+- Validación de formularios en tiempo real
+- Redirección automática al dashboard
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 📊 Dashboard
+- Estadísticas en vivo del sistema
+- Navegación rápida a todas las secciones
+- Reloj y fecha actualizados
 
-### Advanced Configuration
+### 👥 Gestión de Estudiantes
+- CRUD completo de estudiantes
+- Búsqueda y paginación
+- Vista detallada con modal
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 📚 Administración de Materias
+- Catálogo de asignaturas
+- Control de créditos
+- Organización por código
 
-### Deployment
+### 📝 Sistema de Matrículas
+- Asignación intuitiva
+- Validación automática
+- Historial de matrículas
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🔧 Configuración
 
-### `npm run build` fails to minify
+### Variables de Entorno
+Crea un archivo `.env` en la raíz del proyecto:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```env
+REACT_APP_API_URL=http://localhost:8080/backend-api/api
+REACT_APP_NAME=Sistema de Matrículas
+REACT_APP_VERSION=1.0.0
+```
+
+## 🐛 Solución de Problemas Comunes
+
+### Problemas de Conexión
+- Verifica que el backend esté corriendo en el puerto 8080
+- Confirma la URL del API en el archivo `.env`
+
+### Problemas de Estilos
+- Limpia la caché del navegador
+- Reinicia el servidor de desarrollo
+
+### Errores de Build
+- Elimina la carpeta `node_modules` y reinstala
+- Verifica la versión de Node.js
+
+## 🤝 Contribución
+
+1. Fork del proyecto
+2. Crear rama de feature (`git checkout -b feature/nueva-funcionalidad`)
+3. Commit de cambios (`git commit -m 'Agregar nueva funcionalidad'`)
+4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
+5. Abrir Pull Request
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT - revisa el archivo LICENSE para más detalles.
+
+## 📞 Soporte
+
+Para reportar problemas o solicitar ayuda:
+- Crea un issue en el repositorio
+- Contacta al equipo de desarrollo
+
+---
+
+**Desarrollado con ❤️ para la gestión educativa moderna**
